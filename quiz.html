@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quiz — Manual Testing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="quiz-wrap" class="container card">
+    <div class="quiz-header">
+      <h2>Manual Testing Quiz</h2>
+      <div>
+        <span id="timer">15s</span>
+        <button class="btn-ghost" onclick="logout()">Logout</button>
+      </div>
+    </div>
+
+    <h3 id="question">Question text</h3>
+
+    <div id="options" class="options"></div>
+
+    <div class="row">
+      <button onclick="nextQuestion()">Next</button>
+      <button class="btn-ghost" onclick="restartQuiz()">Restart</button>
+    </div>
+  </div>
+
+  <div id="score-box" class="container card hide">
+    <h2>Your Result</h2>
+    <p id="score"></p>
+    <div class="row">
+      <button onclick="restartQuiz()">Take Again</button>
+      <button class="btn-ghost" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+<script src="quiz.js"></script>
+</body>
+</html>

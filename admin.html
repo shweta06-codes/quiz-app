@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin Panel — Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Admin login card -->
+  <div id="admin-login-wrap" class="container card">
+    <h2>Admin Login</h2>
+    <input id="adminUser" placeholder="Admin username" />
+    <input id="adminPass" type="password" placeholder="Admin password" />
+    <div class="row">
+      <button onclick="adminLogin()">Login</button>
+      <button class="btn-ghost" onclick="adminInit()">Init Admin</button>
+    </div>
+    <p class="muted">Click <b>Init Admin</b> once to create default admin credentials (only on first setup).</p>
+  </div>
+
+  <!-- Admin panel -->
+  <div id="admin-panel" class="hide">
+    <div class="admin-header card">
+      <h2>Admin Dashboard</h2>
+      <div>
+        <button onclick="adminLogout()">Logout</button>
+        <button class="btn-ghost" onclick="exportQuestions()">Export JSON</button>
+      </div>
+    </div>
+
+    <div class="admin-grid">
+      <div class="card">
+        <h4>Total Questions</h4>
+        <p id="totalQuestions">0</p>
+        <h4>Total Users</h4>
+        <p id="totalUsers">0</p>
+      </div>
+
+      <div class="card">
+        <h4>Top Users (Best Score)</h4>
+        <ul id="topUsersList"></ul>
+      </div>
+
+      <div class="card">
+        <h4>Recent Attempts</h4>
+        <ul id="recentAttempts"></ul>
+      </div>
+
+      <div class="card">
+        <h4>Attempts Chart</h4>
+        <canvas id="attemptChart" width="400" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Manage Questions</h3>
+
+      <div class="form-row">
+        <input id="qText" placeholder="Question text" />
+      </div>
+      <div class="form-row">
+        <input id="opt1" placeholder="Option 1" />
+        <input id="opt2" placeholder="Option 2" />
+      </div>
+      <div class="form-row">
+        <input id="opt3" placeholder="Option 3" />
+        <input id="opt4" placeholder="Option 4" />
+      </div>
+      <div class="form-row">
+        <input id="correct" placeholder="Correct answer (exact text)" />
+      </div>
+      <div class="row">
+        <button onclick="addQuestion()">Add Question</button>
+        <button class="btn-ghost" onclick="refreshQuestionList()">Refresh List</button>
+      </div>
+
+      <hr/>
+
+      <h4>Existing Questions (<span id="countQuestions">0</span>)</h4>
+      <div id="questionsList" class="questions-list"></div>
+    </div>
+  </div>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Quiz App — Login / Signup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="auth-wrap">
+    <div id="login-card" class="card auth-card">
+      <h2>Login</h2>
+      <input id="loginUser" placeholder="Username" />
+      <input id="loginPass" type="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p class="muted">Don't have an account? <a href="#" onclick="showSignup()">Sign up</a></p>
+      <p class="muted">Are you admin? <a href="admin.html">Admin Panel</a></p>
+    </div>
+
+    <div id="signup-card" class="card auth-card hide">
+      <h2>Sign Up</h2>
+      <input id="newUser" placeholder="New username" />
+      <input id="newPass" type="password" placeholder="New password" />
+      <button onclick="signup()">Create Account</button>
+      <p class="muted">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
